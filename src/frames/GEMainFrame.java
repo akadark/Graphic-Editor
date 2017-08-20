@@ -4,11 +4,13 @@ import constants.GEConstants;
 
 import javax.swing.*;
 
-import constants.GEConstants.*;
+import menus.GEMenuBar;
 
 public class GEMainFrame extends JFrame{
 
     private GEDrawingPanel drawingPanel;
+    private GEMenuBar menuBar;
+
     private static GEMainFrame uniqueMainFrame =
             new GEMainFrame(GEConstants.TITLE_MAINFRAME);
 
@@ -16,8 +18,12 @@ public class GEMainFrame extends JFrame{
     // make itself in MainFrame and use this in other files with using getter
     private GEMainFrame(String title) {
         super(title); // set name of title bar
+
         drawingPanel = new GEDrawingPanel();
         add(drawingPanel);
+
+        menuBar = new GEMenuBar();
+        this.setJMenuBar(menuBar);
     }
 
     // getter
