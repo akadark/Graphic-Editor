@@ -6,24 +6,27 @@ import javax.swing.*;
 
 import menus.GEMenuBar;
 
+import java.awt.*;
+
 public class GEMainFrame extends JFrame{
 
-    private GEDrawingPanel drawingPanel;
     private GEMenuBar menuBar;
+    private GEToolBar toolBar;
 
+    // Singleton Pattern: make constructor with private and
+    // make a unique instance of it in the MainFrame.
+    // After that, use this unique instance in other class with using getter.
     private static GEMainFrame uniqueMainFrame =
             new GEMainFrame(GEConstants.TITLE_MAINFRAME);
 
-    // Singleton Pattern: make constructor with private,
-    // make itself in MainFrame and use this in other files with using getter
     private GEMainFrame(String title) {
         super(title); // set name of title bar
 
-        drawingPanel = new GEDrawingPanel();
-        add(drawingPanel);
-
         menuBar = new GEMenuBar();
         this.setJMenuBar(menuBar);
+
+        toolBar = new GEToolBar(GEConstants.TITLE_TOOLBAR);
+        this.add(BorderLayout.NORTH, toolBar);
     }
 
     // getter
