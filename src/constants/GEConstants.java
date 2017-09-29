@@ -2,10 +2,16 @@ package constants;
 
 import java.awt.*;
 
-public class GEConstants {
+/*
+final: creating a variable to be never changed like read only.
 
-    // private final static -> create this variable only once.
-    // private final -> create this variable for every object.
+static: creating not instance variable but class variable only once
+which you can use in other class without making object.
+
+static final: creating this variable for every object.
+*/
+
+public class GEConstants {
 
     // GEMainFrame
     public static final int WIDTH_MAINFRAME = 400;
@@ -29,7 +35,7 @@ public class GEConstants {
     }
 
     // GEToolBar
-    public static String TITLE_TOOLBAR = "shape tools";
+    public static String TITLE_TOOLBAR = "shapes tools";
     public static enum EToolBarButtons {
         Select, Rectangle, Line, Ellipse, Polygon
     }
