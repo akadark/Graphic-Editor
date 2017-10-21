@@ -9,11 +9,6 @@ import menus.GEMenuBar;
 import java.awt.*;
 
 public class GEMainFrame extends JFrame{
-
-    private GEDrawingPanel drawingPanel;
-    private GEMenuBar menuBar;
-    private GEToolBar toolBar;
-
     /*
     Singleton Pattern: make constructor with private and
     make a unique instance of it in the MainFrame.
@@ -23,6 +18,10 @@ public class GEMainFrame extends JFrame{
     // Because it is static, It will take memory right after this program start.
     private static GEMainFrame uniqueMainFrame =
             new GEMainFrame(GEConstants.TITLE_MAINFRAME);
+
+    private GEDrawingPanel drawingPanel;
+    private GEMenuBar menuBar;
+    private GEToolBar toolBar;
 
     private GEMainFrame(String title) {
         super(title); // set name of title bar
@@ -44,10 +43,11 @@ public class GEMainFrame extends JFrame{
 
     // default setting about size, close option, etc
     public void init() {
-        toolBar.init(drawingPanel);
         this.setSize(GEConstants.WIDTH_MAINFRAME, GEConstants.HEIGHT_MAINFRAME);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // active 'X' button and real exit on the memory
+
+        toolBar.init(drawingPanel); // give drawingPanel instance to GEToolbar
     }
 
 }
