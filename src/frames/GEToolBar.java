@@ -57,14 +57,17 @@ public class GEToolBar extends JToolBar{
         public void actionPerformed(ActionEvent e) {
             JRadioButton button = (JRadioButton)e.getSource();
             if(button.getActionCommand().equals(GEConstants.EToolBarButtons.Rectangle.toString())) {
-                drawingPanel.setRectangle(new GERectangle());
-                drawingPanel.setSelectShape(GEConstants.EToolBarButtons.Rectangle);
+                // drawingPanel.setRectangle(new GERectangle());
+                // drawingPanel.setSelectShape(GEConstants.EToolBarButtons.Rectangle);
+                drawingPanel.setCurrentShape(new GERectangle());
             } else if(button.getActionCommand().equals(GEConstants.EToolBarButtons.Ellipse.toString())) {
-                drawingPanel.setEllipse(new GEEllipse());
-                drawingPanel.setSelectShape(GEConstants.EToolBarButtons.Ellipse);
+                // drawingPanel.setEllipse(new GEEllipse());
+                // drawingPanel.setSelectShape(GEConstants.EToolBarButtons.Ellipse);
+                drawingPanel.setCurrentShape(new GEEllipse());
             } else if(button.getActionCommand().equals(GEConstants.EToolBarButtons.Line.toString())) {
-                drawingPanel.setLine(new GELine());
-                drawingPanel.setSelectShape(GEConstants.EToolBarButtons.Line);
+                // drawingPanel.setLine(new GELine());
+                // drawingPanel.setSelectShape(GEConstants.EToolBarButtons.Line);
+                drawingPanel.setCurrentShape(new GELine());
             }
         }
     }
